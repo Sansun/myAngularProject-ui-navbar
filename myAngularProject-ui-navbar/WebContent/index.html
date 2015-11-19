@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ISAAC 2.0 NavBar</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="release/css/ui-navbar.css">
+</head>
+<body>
+
+<div ng-controller="NavigationController">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true"
+                    ng-click="navCollapsed = !navCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="home">ISAAC2</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+
+            <ul class="nav navbar-nav">
+                <li dropdown>
+                    <a href="#" dropdown-toggle>
+                        General Administration
+                        <b class='caret'></b>
+                    </a>
+                    <tree tree='tree'></tree>
+                </li>
+                <li dropdown>
+                    <a href="#" dropdown-toggle>
+                        Teams, Roles, Position Assignments
+                        <span class='caret'></span>
+                    </a>
+                    <tree tree='tree2'></tree>
+                </li>
+				
+				
+				 <li dropdown>
+                    <a href="#" dropdown-toggle>
+                        Non-Disaster Administration
+                        <span class='caret'></span>
+                    </a>
+                    <tree tree='tree3'></tree>
+                </li>
+				
+				
+				 <li dropdown>
+                    <a href="#" dropdown-toggle>
+                        Disaster Adminstration
+                        <span class='caret'></span>
+                    </a>
+                    <tree tree='tree4'></tree>
+                </li>
+            </ul>
+			
+			<!-- Right-side menu -->
+            <ul class="nav navbar-nav navbar-right">
+                <li dropdown>
+                    <a href="#" dropdown-toggle>
+                        Logout
+                        <b class='caret'></b>
+                    </a>
+                    <tree tree='tree5'></tree>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+</div>
+
+<div ui-view></div>
+
+</body>
+<!-- AngularJS -->
+<script src="/node_modules/angular/angular.js"></script>
+
+<!-- AngularJS Modules -->
+<script src="/node_modules/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="/node_modules/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+
+<!-- ui-navbar script -->
+<script src="../release/js/ui-navbar.min.js"></script>
+
+<!-- app script -->
+<script src="app.js"></script>
+
+</html>
